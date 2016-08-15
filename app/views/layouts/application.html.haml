@@ -10,7 +10,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
 
-    %link{:href => "https://fonts.googleapis.com/css?family=Lato|Open+Sans", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet"}/
 
   %body
     = yield
+    = render 'partials/footer'

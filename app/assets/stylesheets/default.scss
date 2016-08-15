@@ -1,11 +1,19 @@
 // Place all the default styles.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
+  font-family : "Roboto", Arial, sans-serif;
+  color       : #777;
+  font-size   : 15px;
+  line-height : 24px;
+  font-weight : 300;
+
   width       : 100%;
   height      : 100%;
   display     : block;
-  font-family : "Lato", "Open+Sans", serif;
 }
 * {
   margin  : 0px;
@@ -21,6 +29,41 @@ hr {
   }
 }
 
+footer {
+  padding: 23px 0px;
+
+  .copyright-txt {
+    float   : left;
+    margin  : 0px;
+    padding : 16px 0px;
+
+    & > a {
+      color       : #7b7b7b;
+      font-weight : bold;
+    }
+  }
+  .socials {
+    float : right;
+
+    & > a {
+      float            : left;
+      width            : 42px;
+      height           : 42px;
+      color            : #ffffff;
+      font-size        : 18px;
+      line-height      : 42px;
+      text-align       : center;
+      margin           : 7px 0px 7px 14px;
+      border-radius    : 50%;
+      background-color : #dddddd;
+
+      &:hover {
+        background-color: #565555;
+      }
+    }
+  }
+}
+
 .point-bottom {
   position: relative;
 
@@ -30,10 +73,33 @@ hr {
     position: absolute;
     right: calc(50% - 12px);
     top: 100%;
-    border-top: 16px rgba(51, 51, 51, 0.7) solid;
+    border-top: 16px solid #565555;
     border-bottom: 0;
     border-right: 12px transparent solid;
     border-left: 12px transparent solid;
   }
 }
 
+@media (max-width: 767px){
+  footer {
+    text-align : center;
+    padding    : 25px 0px;
+
+    .copyright-txt,
+    .socials {
+      float: none;
+    }
+    .copyright-txt{
+      padding: 0px;
+    }
+    .socials {
+      margin-top: 10px;
+
+      & > a {
+        display : inline-block;
+        float   : none;
+        margin  : 10px 5px 0px;
+      }
+    }
+  }
+}

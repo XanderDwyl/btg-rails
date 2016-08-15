@@ -59,6 +59,7 @@ gem 'jquery-rails'                      # Use jquery as the JavaScript library
 gem 'jquery-turbolinks'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
