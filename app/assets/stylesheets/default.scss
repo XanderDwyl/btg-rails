@@ -20,6 +20,55 @@ body {
   padding : 0px;
 }
 
+.navbar {
+  min-height    : 0px;
+  color         : #FFF;
+  padding       : 40px 0px;
+  margin        : 0px;
+  border        : 0px;
+  border-radius : 0px;
+  width         : 100%;
+  position      : absolute;
+
+  ul {
+    &.nav {
+      overflow : hidden;
+      float    : right;
+      height   : 40px;
+
+      & > li {
+        padding: 11px 25px;
+        & > a {
+          float          : left;
+          color          : #b0b0b0;
+          font-size      : 14px;
+          line-height    : 18px;
+          font-weight    : 600;
+          text-transform : uppercase;
+          background     : none !important;
+          padding        : 0px;
+        }
+        &.active {
+          & > a {
+            color: #ffffff;
+          }
+        }
+        &.menu-btn {
+          padding-top    : 5px;
+          padding-bottom : 5px;
+
+          & > a {
+            color         : #FFF !important;
+            background    : #565555 !important;
+            padding       : 7px 15px 6px;
+            border-radius : 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
 hr {
   &.small {
     max-width    : 400px;
