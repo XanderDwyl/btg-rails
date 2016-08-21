@@ -1,0 +1,12 @@
+.row
+  .col-sm-7
+    = render 'partials/questions'
+  .col-sm-5
+    #logbox
+      %form#signup{:action => "/signup", :method => "post"}
+        %h1 Create an Account
+        %input.input.pass{:autofocus => "autofocus", :name => "user[name]", :pattern => "^[\\w]{3,16}$", :placeholder => "What's your username?", :required => "required", :type => "text"}/
+        %input.input.pass{:name => "user[password]", :placeholder => "Choose a password", :required => "required", :type => "password"}/
+        %input.input.pass{:name => "user[password2]", :placeholder => "Confirm password", :required => "required", :type => "password"}/
+        %input.input.pass{:name => "user[email]", :placeholder => "Email address", :type => "email"}/
+        %input.inputButton{:type => "submit", :value => "Sign me up!"}/

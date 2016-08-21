@@ -3,32 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "utility";
+
+* {
+  margin  : 0;
+  padding : 0;
+}
+
+
+::selection {
+  background-color: #b5e2e7;
+}
+
+::-moz-selection {
+  background-color: #8ac7d8;
+}
+
+html, body, .intro-header {
+  min-height : 100% !important;
+  height     : 100%;
+}
 
 body {
-  font-family : "Roboto", Arial, sans-serif;
+  font        : 300 15px 'Roboto', Helvetica, Arial, sans-serif ;
   color       : #777;
-  font-size   : 15px;
   line-height : 24px;
-  font-weight : 300;
-
-  width       : 100%;
-  height      : 100%;
   display     : block;
-}
-* {
-  margin  : 0px;
-  padding : 0px;
 }
 
 .navbar {
-  min-height    : 0px;
-  color         : #FFF;
-  padding       : 40px 0px;
-  margin        : 0px;
-  border        : 0px;
-  border-radius : 0px;
-  width         : 100%;
-  position      : absolute;
+  min-height       : 0px;
+  color            : #FFF;
+  padding          : 20px 0px;
+  margin           : 0px;
+  top              : 0;
+  border-radius    : 0px;
+  width            : 100%;
+  position         : absolute;
+  // border-bottom : 2px solid #ace4d4;
 
   ul {
     &.nav {
@@ -37,31 +49,32 @@ body {
       height   : 40px;
 
       & > li {
-        padding: 11px 25px;
+        padding : 8px 10px;
+
         & > a {
           float          : left;
-          color          : #b0b0b0;
+          color          : #525252;
           font-size      : 14px;
           line-height    : 18px;
           font-weight    : 600;
           text-transform : uppercase;
-          background     : none !important;
-          padding        : 0px;
+          background     : none;
+          padding        : 7px 15px 6px;
+          border-radius  : 15px;
+        }
+        &.active, &:hover {
+          & > a {
+            color : #ffffff;
+          }
+        }
+        &:hover {
+          & > a {
+            background : #afe2d3;
+          }
         }
         &.active {
           & > a {
-            color: #ffffff;
-          }
-        }
-        &.menu-btn {
-          padding-top    : 5px;
-          padding-bottom : 5px;
-
-          & > a {
-            color         : #FFF !important;
-            background    : #565555 !important;
-            padding       : 7px 15px 6px;
-            border-radius : 15px;
+            background : #80ccb6;
           }
         }
       }
@@ -78,8 +91,79 @@ hr {
   }
 }
 
+.content-wrapper {
+  height     : 85%;
+  overflow   : scroll;
+  margin-top : 90px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 175%;
+  color: #757575;
+  font-weight: 300;
+}
+h1, input {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+.input {
+  width: 75%;
+  height: 50px;
+  display: block;
+  margin: 0 auto 15px;
+  padding: 0 15px;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+
+  @include transition(border-bottom-color .10s linear .25s);
+}
+.input:focus {
+  outline: none;
+  border-bottom-color: #3CC !important;
+}
+.input:hover {
+  border-bottom-color: #dcdcdc;
+}
+.input:invalid {
+  box-shadow: none;
+}
+.pass:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.inputButton {
+  position: relative;
+  width: 85%;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+  color: white;
+  background-color: #3CC;
+  border: none;
+
+  @include box-shadow(0 5px 0 #2CADAD);
+}
+.inputButton:hover {
+  top: 2px;
+  @include box-shadow(0 3px 0 #2CADAD);
+}
+.inputButton:active {
+  top: 5px;
+  box-shadow: none;
+}
+.inputButton:focus {
+  outline: none;
+}
+
+#logbox {
+  padding          : 10px;
+  margin           : 134px auto 0;
+  margin-right     : 0;
+  width            : 550px;
+  background-color : #fff;
+}
+
 footer {
-  padding: 23px 0px;
+  padding : 23px 0px;
 
   .copyright-txt {
     float   : left;

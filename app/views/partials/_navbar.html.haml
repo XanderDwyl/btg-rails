@@ -1,13 +1,17 @@
 %nav#navigation.navbar.scrollspy
   .container
     .navbar-brand
-      %a{:href => "/"}
+      -# %a{:href => "/"}
         -# %img{:alt => "Logo", :src => "images/logo.png"}/
-        %i.fa.fa-assistive-listening-systems
+        -# %i.fa.fa-assistive-listening-systems
     %ul.nav.navbar-nav
       %li.active
-        %a.smooth-scroll{:href => "/"} Home
+        %a{:href => "/"} Home
       %li
-        %a.smooth-scroll{:href => "/community"} Community
-      %li.menu-btn
-        %a{:href => "/login"} Sign In
+        %a{:href => "/questions"} Questions
+      %li
+        %a{:href => "/community"} Community
+      %li
+        %a{:href => "/sign-up"} Sign Up
+      %li
+        %a{:href => "/login"} Log In

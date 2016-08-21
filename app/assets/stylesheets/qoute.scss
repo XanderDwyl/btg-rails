@@ -1,0 +1,109 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.box-qoute-border {
+  margin           : 20px;
+  height           : auto;
+  position         : relative;
+  border           : 1px solid #80ccb6;
+  border-radius    : 3px;
+  background-color : #ffffff;
+
+   & > .box-body {
+    height  : 20px;
+    padding : 5px 20px;
+
+    &:before {
+      content : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam numquam, sapiente vero odit harum sed quae maxime aperiam incidunt nemo officiis, cumque sit voluptas fugiat, veritatis suscipit cum, placeat quibusdam!';
+    }
+  }
+  & > .box-footer {
+    height : 100px;
+  }
+
+  &:before, &:after {
+    content        : '';
+    width          : 0;
+    height         : 0;
+    bottom         : 11px;
+    right          : 100%;
+    left           : -16px;
+    display        : block;
+    position       : absolute;
+    border-color   : transparent;
+    border-style   : solid solid outset;
+    pointer-events : none;
+  }
+
+  &:before {
+    border-width       : 8px;
+    border-right-color : #80ccb6;
+  }
+
+  &:after {
+    margin-top         : 1px;
+    margin-left        : 1px;
+    border-width       : 8px;
+    border-right-color : #ffffff;
+  }
+
+  &.right{
+    &:before, &:after {
+      top          : 11px;
+      right        : -16px;
+      left         : 100%;
+      border-color : transparent;
+    }
+    &:before {
+      margin-top        : -1px;
+      border-left-color : #80ccb6;
+    }
+    &:after {
+      margin-top        : 0;
+      margin-left       : 0;
+      border-width      : 7px;
+      border-left-color : #ffffff;
+    }
+  }
+  &.bottom{
+    &:before, &:after {
+      bottom       : -16px;
+      top          : 100%;
+      left         : 10px;
+      border-color : transparent;
+
+    }
+    &:before {
+      margin-top: 0;
+      border-top-color: #80ccb6;
+
+    }
+    &:after {
+      margin-top: 0;
+      margin-left: 0;
+      left: 11px;
+      border-top-color: #ffffff;
+
+    }
+  }
+  &.top{
+    &:before, &:after {
+      bottom       : 100%;
+      top          : -16px;
+      left         : 10px;
+      border-color : transparent;
+      border-style : solid solid inset;
+    }
+    &:before {
+      margin-bottom       : 0;
+      border-bottom-color : #80ccb6;
+    }
+    &:after {
+      top                 : -15px;
+      left                : 11px;
+      margin-bottom       : 0;
+      margin-left         : 0;
+      border-bottom-color : #ffffff;
+    }
+  }
+}
