@@ -1,8 +1,6 @@
 class AccountController < ApplicationController
   include AuthHelper
 
-  def index; end
-
   def new
     # notice_msg = "Can't create user when login"
     # redirect_to account_index_path, :notice => notice_msg and return if isLogin

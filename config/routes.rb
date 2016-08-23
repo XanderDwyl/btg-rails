@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :account, only: ['index', 'create', 'edit']
-  get 'register'     => "account#new"
-  get 'account/new'  => redirect('/register')
+  get 'login'       => "auth#login"
+  post 'login'      => "auth#create"
+  get 'logout'      => "auth#logout"
+
+  get 'register'    => "account#new"
+  get 'account/new' => redirect('/register')
 
   get '*anything' => 'error#not_found'
 end

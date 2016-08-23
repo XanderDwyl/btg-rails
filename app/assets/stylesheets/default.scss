@@ -187,14 +187,29 @@ h1, input {
   width            : 100%;
   background-color : #ffffff;
 }
+#loginbox {
+  width     : 100%;
+  max-width : 340px;
+  margin    : 30px auto 100px;
+  padding   : 30px;
+
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.25));
+
+  & > form {
+    input[type="text"], input[type="password"] {
+      text-align : center;
+    }
+  }
+}
 
 footer {
   padding : 23px 0px;
 
   .copyright-txt {
-    float   : left;
-    margin  : 0px;
-    padding : 16px 0px;
+    float     : left;
+    margin    : 0px;
+    padding   : 16px 0px;
+    font-size : 14px;
 
     & > a {
       color       : #7b7b7b;

@@ -23,12 +23,29 @@ module ApplicationHelper
     profile = user.profile
 
     session[:birthdate] = profile[:birthdate]
-    puts session.to_json
     # if profile.present?
     #   session[:full_name] = %Q(#{profile[:firstname]} #{profile[:lastname]})
     #   session[:birthdate] = %Q(#{profile[:birthdate]})
     # end
 
     user
+  end
+
+  # This returns 'activate' string
+  # if the passed in data matches the
+  # current request path.
+  #
+  # @param path - A string or an array of possible matches
+  #               for example: 'home' or ['questions', 'community']
+  def should_activate(path)
+    return 'active' if path=='/' && request.path=='/'
+    if path.is_a? Array
+      matcher = '(' + path.join('|') + ')'
+      pattern = Regexp.new(matcher, Regexp::IGNORECASE)
+    else
+      pattern = /^\/#{path}/i
+    end
+
+    return 'active' if request.path.match(pattern)
   end
 end
