@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.string :username
       t.string :password_digest
-      t.string :type            # admin, user
+      t.string :type #, default: 'user'            # admin, user
       t.timestamps null: false
     end
     add_index :users, :username, :unique => true

@@ -32,14 +32,15 @@ body {
 }
 
 .navbar {
-  min-height       : 0px;
-  color            : #FFF;
-  padding          : 20px 0px;
-  margin           : 0px;
-  top              : 0;
-  border-radius    : 0px;
-  width            : 100%;
-  position         : relative;
+  min-height    : 0px;
+  color         : #FFF;
+  padding       : 20px 0px;
+  margin        : 0px;
+  top           : 0;
+  width         : 100%;
+  border-radius : 0px;
+  position      : absolute;
+  z-index: 1;
 
   ul {
     &.nav {
@@ -90,9 +91,34 @@ hr {
   }
 }
 .content-wrapper {
+  padding-top : 92px;
+
   & > .container, & > .questions-container > .container {
+    height        : 100%;
     border-bottom : 1px solid #7fe0c4;
   }
+  & > .container {
+    & > .row {
+      & > div {
+        & > .questions-container {
+          overflow   : scroll;
+          max-height : 300px;
+        }
+      }
+    }
+  }
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
 }
 h1 {
   text-align: center;
@@ -121,10 +147,7 @@ h1, input {
 }
 .input:focus {
   outline: none;
-  border-bottom-color: #3CC !important;
-}
-.input:hover {
-  border-bottom-color: #7fe0c4;
+  border-bottom-color: #7fe0c4 !important;
 }
 .input:invalid {
   box-shadow: none;
@@ -161,7 +184,8 @@ h1, input {
 #logbox {
   padding          : 10px;
   min-height       : 500px;
-  background-color : #fff;
+  width            : 100%;
+  background-color : #ffffff;
 }
 
 footer {
