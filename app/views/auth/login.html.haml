@@ -1,0 +1,10 @@
+.container
+  .row.vertical-align
+    .col-xs-12
+      #loginbox
+        %form#signup{:action => "/login", :method => "post"}
+          %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
+          %h1 Account login
+          %input.input.pass{:autofocus => "autofocus", :name => "username", :pattern => "^[\\w]{3,16}$", :placeholder => "What's your username?", :required => "required", :type => "text"}/
+          %input.input.pass{:name => "password", :placeholder => "Choose a password", :required => "required", :type => "password"}/
+          %input.inputButton{:type => "submit", :value => "Sign me in!"}/

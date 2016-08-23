@@ -1,0 +1,18 @@
+@mixin bg-size($bg-size) {
+  -webkit-background-size : $bg-size;
+  -moz-background-size    : $bg-size;
+  background-size         : $bg-size;
+  -o-background-size      : $bg-size;
+}
+@mixin box-shadow($b-shadow) {
+  -webkit-box-shadow: $b-shadow;
+  -moz-box-shadow: $b-shadow;
+  box-shadow: $b-shadow;
+}
+@mixin transition($transition) {
+  -webkit-transition : $transition;
+  -moz-transition    : $transition;
+  -o-transition      : $transition;
+  -ms-transition     : $transition;
+  transition         : $transition;
+}

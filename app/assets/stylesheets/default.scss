@@ -3,32 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "utility";
+
+* {
+  margin  : 0;
+  padding : 0;
+}
+
+
+::selection {
+  background-color: #b5e2e7;
+}
+
+::-moz-selection {
+  background-color: #8ac7d8;
+}
+
+html, body {
+  min-height : 100% !important;
+  height     : 100%;
+}
 
 body {
-  font-family : "Roboto", Arial, sans-serif;
+  font        : 300 15px 'Roboto', Helvetica, Arial, sans-serif ;
   color       : #777;
-  font-size   : 15px;
   line-height : 24px;
-  font-weight : 300;
-
-  width       : 100%;
-  height      : 100%;
   display     : block;
-}
-* {
-  margin  : 0px;
-  padding : 0px;
 }
 
 .navbar {
   min-height    : 0px;
   color         : #FFF;
-  padding       : 40px 0px;
+  padding       : 20px 0px;
   margin        : 0px;
-  border        : 0px;
-  border-radius : 0px;
+  top           : 0;
   width         : 100%;
+  border-radius : 0px;
   position      : absolute;
+  z-index: 1;
 
   ul {
     &.nav {
@@ -37,31 +49,32 @@ body {
       height   : 40px;
 
       & > li {
-        padding: 11px 25px;
+        padding : 8px 10px;
+
         & > a {
           float          : left;
-          color          : #b0b0b0;
+          color          : #525252;
           font-size      : 14px;
           line-height    : 18px;
           font-weight    : 600;
           text-transform : uppercase;
-          background     : none !important;
-          padding        : 0px;
+          background     : none;
+          padding        : 7px 15px 6px;
+          border-radius  : 15px;
+        }
+        &.active, &:hover {
+          & > a {
+            color : #ffffff;
+          }
+        }
+        &:hover {
+          & > a {
+            background : #afe2d3;
+          }
         }
         &.active {
           & > a {
-            color: #ffffff;
-          }
-        }
-        &.menu-btn {
-          padding-top    : 5px;
-          padding-bottom : 5px;
-
-          & > a {
-            color         : #FFF !important;
-            background    : #565555 !important;
-            padding       : 7px 15px 6px;
-            border-radius : 15px;
+            background : #80ccb6;
           }
         }
       }
@@ -77,14 +90,126 @@ hr {
     border-color : #fff;
   }
 }
+.content-wrapper {
+  padding-top : 92px;
+
+  & > .container, & > .questions-container > .container {
+    height        : 100%;
+    border-bottom : 1px solid #7fe0c4;
+  }
+  & > .container {
+    & > .row {
+      & > div {
+        & > .questions-container {
+          overflow   : scroll;
+          max-height : 300px;
+        }
+      }
+    }
+  }
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+}
+h1 {
+  text-align: center;
+  font-size: 175%;
+  color: #757575;
+  font-weight: 300;
+}
+h1, input {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+#signup {
+  & > h1 {
+    margin: 20px 0;
+  }
+}
+.input {
+  width         : 100%;
+  height        : 50px;
+  display       : block;
+  margin        : 0 auto 15px;
+  padding       : 0 15px;
+  border        : none;
+  border-bottom : 2px solid #ebebeb;
+
+  @include transition(border-bottom-color .10s linear .25s);
+}
+.input:focus {
+  outline: none;
+  border-bottom-color: #7fe0c4 !important;
+}
+.input:invalid {
+  box-shadow: none;
+}
+.pass:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.inputButton {
+  position         : relative;
+  width            : 100%;
+  height           : 50px;
+  display          : block;
+  margin           : 30px auto 30px;
+  color            : white;
+  border           : none;
+  font-weight      : 400;
+  font-size        : 20px;
+  background-color : #7fe0c4;
+
+  @include box-shadow(0 5px 0 #80ccb6);
+}
+.inputButton:hover {
+  top: 2px;
+  @include box-shadow(0 3px 0 #80ccb6);
+}
+.inputButton:active {
+  top: 5px;
+  box-shadow: none;
+}
+.inputButton:focus {
+  outline: none;
+}
+
+#logbox {
+  padding          : 10px;
+  min-height       : 500px;
+  width            : 100%;
+  background-color : #ffffff;
+}
+#loginbox {
+  width     : 100%;
+  max-width : 340px;
+  margin    : 30px auto 100px;
+  padding   : 30px;
+
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.25));
+
+  & > form {
+    input[type="text"], input[type="password"] {
+      text-align : center;
+    }
+  }
+}
 
 footer {
-  padding: 23px 0px;
+  padding : 23px 0px;
 
   .copyright-txt {
-    float   : left;
-    margin  : 0px;
-    padding : 16px 0px;
+    float     : left;
+    margin    : 0px;
+    padding   : 16px 0px;
+    font-size : 14px;
 
     & > a {
       color       : #7b7b7b;
@@ -107,7 +232,7 @@ footer {
       background-color : #dddddd;
 
       &:hover {
-        background-color: #565555;
+        background-color : #7fe0c4;
       }
     }
   }

@@ -1,0 +1,15 @@
+.container
+  .row.vertical-align
+    .hidden-xs.hidden-sm.col-md-7
+      .questions-container
+        = render 'partials/questions'
+    .col-xs-12.col-md-5
+      #logbox
+        %form#signup{:action => "/account", :method => "post"}
+          %input{:name => "authenticity_token", :type => "hidden", :value => "#{form_authenticity_token}"}
+          %h1 Create an Account
+          %input.input.pass{:autofocus => "autofocus", :name => "username", :pattern => "^[\\w]{3,16}$", :placeholder => "What's your username?", :required => "required", :type => "text"}/
+          %input.input.pass{:name => "password", :placeholder => "Choose a password", :required => "required", :type => "password"}/
+          %input.input.pass{:name => "password2", :placeholder => "Confirm password", :required => "required confirmed", :type => "password"}/
+          %input.input.pass{:name => "email", :placeholder => "Email address", :type => "email"}/
+          %input.inputButton{:type => "submit", :value => "Sign me up!"}/
