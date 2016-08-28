@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserController, type: :controller do
+RSpec.describe AuthController, type: :controller do
 
   describe "GET #login" do
     it "returns http success" do
