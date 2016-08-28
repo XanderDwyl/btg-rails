@@ -8,9 +8,18 @@
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
     = stylesheet_link_tag    '//fonts.googleapis.com/css?family=Hind:400,500,600,700'
+    = stylesheet_link_tag    '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'
+
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'
+
     = csrf_meta_tags
   %body
+    - flash.map do |item|
+      %script
+        Toast["#{item[0]}"]('#{flash[item[0]]}')
+
+
     = render 'partials/navbar'
     .content-wrapper
       = yield

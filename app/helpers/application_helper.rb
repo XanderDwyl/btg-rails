@@ -8,6 +8,7 @@ module ApplicationHelper
     user = User.find(session[:user_id])
     session[:full_name] = user.get_fullname
     session[:birthdate] = user.get_profile('birthdate')
+    session[:birthdate] = session[:birthdate].to_time.strftime('%B %d, %Y') unless session[:birthdate].nil?
     session[:address] = user.get_profile('address')
     session[:contactno] = user.get_profile('contactno')
   end

@@ -26,7 +26,7 @@
           .field-value= session[:full_name]
         %a.list-group-item{href: "#"}
           .field-title Birthdate
-          .field-value= session[:birthdate].to_time.strftime('%B %d, %Y')
+          .field-value= session[:birthdate]
         %a.list-group-item{href: "#"}
           .field-title Address
           .field-value= session[:address]
