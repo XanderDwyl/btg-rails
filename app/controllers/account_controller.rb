@@ -1,6 +1,10 @@
 class AccountController < ApplicationController
   include AuthHelper
 
+  def index
+    @done_percentage = count_field_not_nil(current_user, ['id', 'username', 'full_name', 'birthdate', 'address', 'contactno'])
+  end
+
   def new
     # notice_msg = "Can't create user when login"
     # redirect_to account_index_path, :notice => notice_msg and return if isLogin

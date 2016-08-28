@@ -11,10 +11,7 @@ class AuthController < ApplicationController
   end
 
   def logout
-    session[:user_id]= nil
-    session[:username]= nil
-    session[:full_name]= nil
-
+    clear_session(['user_id', 'username', 'full_name', 'birthdate', 'address', 'contactno'])
     redirect_to root_path, flash: { success: 'Successfully logout!' }
   end
 

@@ -1,13 +1,33 @@
 module ApplicationHelper
+  include ActionView::Helpers::NumberHelper
+
   def set_session_user user
     session[:user_id] = user.id
     session[:username] = user.username
 
-    profile = Profile.find_by user_id: user.id
-    if profile.present?
-      session[:full_name] = %Q(#{profile[:firstname]} #{profile[:lastname]})
+    user = User.find(session[:user_id])
+    session[:full_name] = user.get_fullname
+    session[:birthdate] = user.get_profile('birthdate')
+    session[:address] = user.get_profile('address')
+    session[:contactno] = user.get_profile('contactno')
+  end
+
+  def clear_session(array_session_field)
+    array_session_field.each do |field|
+      session[field] = nil
     end
-    # Todo: add user profiles
+  end
+
+  def count_field_not_nil(obj_name, array_field)
+    total = 0
+    array_field.each do |field|
+      total += 1 unless obj_name[field.to_sym].nil? or obj_name[field.to_sym] == ''
+    end
+
+    return {
+      :count => total,
+      :percent => number_with_precision((Float(total)/obj_name.count)*100, precision: 0)
+    }
   end
 
   def retrieve_field lists, field
@@ -16,19 +36,22 @@ module ApplicationHelper
     profile_field
   end
 
+  # This returns current_user object
+  # based on the session user_id
   def current_user
     user = User.find(session[:user_id])
 
-    # get user profile
-    profile = user.profile
+    # create user account
+    user_account = {
+      :id => user[:id],
+      :username => user[:username],
+      :full_name => user.get_fullname,
+      :birthdate => user.get_profile('birthdate'),
+      :address => user.get_profile('address'),
+      :contactno => user.get_profile('contactno')
+    }
 
-    session[:birthdate] = profile[:birthdate]
-    # if profile.present?
-    #   session[:full_name] = %Q(#{profile[:firstname]} #{profile[:lastname]})
-    #   session[:birthdate] = %Q(#{profile[:birthdate]})
-    # end
-
-    user
+    user_account
   end
 
   # This returns 'activate' string

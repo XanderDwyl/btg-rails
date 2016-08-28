@@ -7,8 +7,9 @@
     %ul.nav.navbar-nav
       %li{class: "#{should_activate('/')}"}
         %a{:href => "/"} Home
-      %li{class: "#{should_activate('questions')}"}
-        %a{:href => "/questions"} Questions
+      - if isLogin?
+        %li{class: "#{should_activate('questions')}"}
+          %a{:href => "/questions"} Questions
       %li{class: "#{should_activate('community')}"}
         %a{:href => "/community"} Community
 
@@ -18,5 +19,7 @@
         %li{class: "#{should_activate('login')}"}
           %a{:href => "/login"} Log In
       - else
+        %li{class: "#{should_activate('account')}"}
+          %a{:href => "/account"} Account
         %li{class: "#{should_activate('logout')}"}
           %a{:href => "/logout"} Log Out
