@@ -1,5 +1,5 @@
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/kgio-2.10.0/ext/kgio
-/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-21134-19wcrtr.rb extconf.rb
+/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-41004-1kq11p1.rb extconf.rb
 checking for CLOCK_MONOTONIC in time.h... no
 checking for CLOCK_MONOTONIC() in time.h... no
 checking for clockid_t in time.h... no
@@ -65,4 +65,4 @@ linking shared-object kgio_ext.bundle
 
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/kgio-2.10.0/ext/kgio
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 kgio_ext.bundle ./.gem.20160828-21134-iwfiw9
+/usr/bin/install -c -m 0755 kgio_ext.bundle ./.gem.20160828-41004-1r6oetf

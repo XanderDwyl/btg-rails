@@ -1,5 +1,5 @@
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
-/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-21134-tu4zju.rb extconf.rb
+/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-41004-qbws8b.rb extconf.rb
 checking for unistd.h... yes
 checking for rb_thread_blocking_region()... no
 checking for rb_thread_call_without_gvl()... yes
@@ -239,4 +239,4 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/nio4r-1.2.1/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20160828-21134-18tzgb5
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20160828-41004-ijzfj2

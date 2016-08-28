@@ -1,5 +1,5 @@
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
-/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-21134-18ziyel.rb extconf.rb
+/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-41004-nxtzs4.rb extconf.rb
 Using pkg-config version 1.1.7
 checking if the C compiler accepts ... yes
 checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
@@ -162,4 +162,4 @@ rm -rf /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/nokogi
 
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20160828-21134-i405ak/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20160828-41004-1l9qhwk/nokogiri

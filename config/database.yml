@@ -12,7 +12,6 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  charset: utf8mb4
   collation: utf8mb4_bin
   pool: 5
   username: root

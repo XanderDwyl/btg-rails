@@ -1,5 +1,5 @@
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
-/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-21134-15t0luo.rb extconf.rb
+/usr/local/var/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160828-41004-1hf1x0k.rb extconf.rb
 creating Makefile
 
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
@@ -12,4 +12,4 @@ linking shared-object debug_inspector.bundle
 
 current directory: /Users/xanderdwyl/projects/btg-rails/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20160828-21134-djllaj
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20160828-41004-by5d28
