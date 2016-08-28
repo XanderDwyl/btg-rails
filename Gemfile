@@ -1,3 +1,4 @@
+#ruby "2.3.1"
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -5,6 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'mysql2', '>= 0.3.13', '< 0.5'      # Use mysql as the database for Active Record
 gem 'unicorn'                           # Use Unicorn as the app server
 gem 'bcrypt', '~> 3.1.7'                # Use ActiveModel has_secure_password
+gem 'rake', '11.2.2'
 
 # sprockets stuff
 gem 'sprockets-rails'

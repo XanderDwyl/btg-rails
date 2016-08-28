@@ -2,7 +2,6 @@ module AuthHelper
   include ApplicationHelper
 
   def authenticate(user_params)
-    puts user_params.to_json
     user = User.find_by_username(user_params[:username])
 
     if user && user.authenticate(user_params[:password])

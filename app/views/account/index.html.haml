@@ -1,1 +1,38 @@
-User Accounts
+.container
+  .profile
+    .profile-img
+      %img.img-circle{:alt => "", :src => "assets/default.png"}/
+    .account-btn.pull-right
+      %button.btn.btn-info.btn-xs{:type => "text"}
+        Edit
+    .account-details
+      %h3.profile-name= session[:full_name]
+      %h4.profile-spec= session[:username]
+      %p.profile-description
+        Mauris aliquam risus id dui elementum accumsan. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. massa sit amet viverra
+
+      .list-group
+        %a.list-group-item.disabled{href: "#"}
+          .progress-bar-title
+            Account Details
+            %span.badge
+          .progress
+            - if @done_percentage[:percent].to_i<100
+              .progress-bar.progress-bar-warning.progress-bar-striped.animated{"data-width" => "#{@done_percentage[:percent]}"}
+            - else
+              .progress-bar.progress-bar-success.progress-bar-striped.animated{"data-width" => "#{@done_percentage[:percent]}"}
+        %a.list-group-item{href: "#"}
+          .field-title Fullname
+          .field-value= session[:full_name]
+        %a.list-group-item{href: "#"}
+          .field-title Birthdate
+          .field-value= session[:birthdate]
+        %a.list-group-item{href: "#"}
+          .field-title Address
+          .field-value= session[:address]
+        %a.list-group-item{href: "#"}
+          .field-title Contact No.
+          .field-value= session[:contactno]
+
+
+

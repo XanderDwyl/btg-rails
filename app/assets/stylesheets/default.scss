@@ -26,6 +26,8 @@ html, body {
 
 body {
   font        : 300 15px 'Roboto', Helvetica, Arial, sans-serif ;
+  font-size   : 16px;
+  font-weight : 400;
   color       : #777;
   line-height : 24px;
   display     : block;
@@ -254,6 +256,44 @@ footer {
   }
 }
 
+// progress-bar
+.progress {
+  height        : 10px;
+  margin-bottom : 25px;
+  box-shadow    : none;
+  background    : none;
+  border-radius : 0;
+  overflow      : visible;
+
+  & > .progress-bar {
+    position         : relative;
+    border-radius    : 4px;
+    // background-color : #cacaca;
+    box-shadow       : none;
+    color            : inherit;
+    width            : 20%;
+
+    & > span {
+      position : absolute;
+      top      : -26px;
+      right    : 0px;
+    }
+    &.progress-bar-success {
+      background-color : #67d5b5;
+    }
+  }
+}
+
+// button
+.btn-info {
+  background-color : #59b99d;
+  padding          : 2px 5px 0;
+
+  &:hover {
+    background-color : #67d5b5;
+    border-color     : #4fa58c;
+  }
+}
 @media (max-width: 767px){
   footer {
     text-align : center;
