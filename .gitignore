@@ -19,3 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore vendor/bundle
+vendor
+dump.rdb
+
+public/assets/*

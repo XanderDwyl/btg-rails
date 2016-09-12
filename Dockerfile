@@ -1,14 +1,26 @@
-FROM ruby:2.3.1
+FROM rails:4.2.5.1
 MAINTAINER janderbacalso@gmail.com
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+# Cache
+WORKDIR /tmp
+Add Gemfile Gemfile
+Add Gemfile.lock Gemfile.lock
+RUN bundle install
 
+# Mount our app
 RUN mkdir /app
-
-WORKDIR /app
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
-
-RUN bundle install --verbose
-
 ADD . /app
+WORKDIR /app
+
+# expose port
+EXPOSE 3000
+
+# set ENV
+ENV DB_HOST ${DB_HOST:-db}
+ENV RAIL_ENV ${RAIL_ENV:-development}
+ENV DATABASE_URL ${DATABASE_URL:-db}
+
+# Entry Point
+ENTRYPOINT bundle exec rake db:create db:migrate
+
+CMD ["bundle", "exec", "unicorn", "-p", "0.0.0.0"]

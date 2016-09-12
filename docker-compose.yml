@@ -3,7 +3,6 @@ services:
   db:
     image: mysql
     environment:
-      - MYSQL_DATABASE=btg_dev
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis:latest
@@ -11,7 +10,6 @@ services:
       - '6379:6379'
   web:
     build: .
-    command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec unicorn -p 3000"
     volumes:
       - .:/app
     ports:
