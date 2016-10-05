@@ -1,0 +1,45 @@
+db:
+  environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    - MYSQL_DATABASE=btg_prod
+  image: 'mysql:latest'
+  restart: always
+  roles:
+    - global
+lb:
+  image: 'dockercloud/haproxy:latest'
+  links:
+    - web
+  ports:
+    - '80:80'
+    - '443:443'
+  restart: always
+  roles:
+    - global
+redis:
+  image: 'redis:latest'
+  restart: always
+  ports:
+    - '6379:6379'
+  roles:
+    - global
+web:
+  environment:
+    - LANG=en_US.UTF-8
+    - RACK_ENV=development
+    - RAILS_ENV=development
+    - RAILS_SERVE_STATIC_FILES=enabled
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+    - SECRET_KEY_BASE=bd8cea383310e04dbc5ed43da6bdbebf56e403560439f523d5f33a93f890c27afe51a5d090872da9c8b2b55f9781f9deadb2fe1c9c4c5d41348f3364653cba4c
+  image: 'xanderdwyl/btg-rails:latest'
+  expose:
+    - '80'
+    - '443'
+  links:
+    - db
+    - redis
+  restart: on-failure
+  roles:
+    - global
+  target_num_containers: 2
